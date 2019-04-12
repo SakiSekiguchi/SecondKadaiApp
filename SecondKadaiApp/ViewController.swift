@@ -9,7 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBAction func goBack(_ sender: UIStoryboardSegue) {
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let next:NextViewController = segue.destination as! NextViewController
+        next.textName = self.textField.text!
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
